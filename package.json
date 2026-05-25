@@ -6,9 +6,32 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron --no-sandbox .",
-    "check": "node --check src/main.js && node --check src/preload.js && node --check src/renderer.js"
+    "check": "node --check src/main.js && node --check src/preload.js && node --check src/renderer.js",
+    "build:linux": "electron-builder --linux deb"
+  },
+  "build": {
+    "appId": "com.asugan.cliproxyapi-usage-monitor",
+    "productName": "CLIProxyAPI Usage Monitor",
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "category": "Development",
+      "icon": "assets/icon.png",
+      "maintainer": "asugan"
+    }
   },
   "devDependencies": {
-    "electron": "^42.2.0"
+    "electron": "^42.2.0",
+    "electron-builder": "^26.8.1"
   }
 }
