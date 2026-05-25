@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLIProxyAPI Usage Monitor</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Local monitor</p>
+          <h1>CLIProxyAPI Usage Monitor</h1>
+          <p class="subtitle">Usage queue verisini çekip lokal olarak saklar; token, model, provider ve kaynak bazlı raporlar.</p>
+        </div>
+        <div id="status" class="status">Hazır</div>
+      </header>
+
+      <section class="panel settings">
+        <div class="field">
+          <label for="baseUrl">CLIProxyAPI URL</label>
+          <input id="baseUrl" type="text" placeholder="http://127.0.0.1:8317" />
+        </div>
+        <div class="field">
+          <label for="managementKey">Management Key</label>
+          <input id="managementKey" type="password" placeholder="Boş bırakırsan kayıtlı key korunur" />
+        </div>
+        <div class="field small">
+          <label for="pollSeconds">Polling saniye</label>
+          <input id="pollSeconds" type="number" min="3" step="1" />
+        </div>
+        <label class="check">
+          <input id="autoPoll" type="checkbox" />
+          Otomatik topla
+        </label>
+        <button id="saveSettings">Kaydet</button>
+        <button id="collectNow" class="primary">Şimdi Topla</button>
+      </section>
+
+      <section class="metrics">
+        <article class="metric">
+          <span>Toplam Token</span>
+          <strong id="totalTokens">0</strong>
+        </article>
+        <article class="metric">
+          <span>İstek</span>
+          <strong id="totalRequests">0</strong>
+        </article>
+        <article class="metric">
+          <span>Input Token</span>
+          <strong id="inputTokens">0</strong>
+        </article>
+        <article class="metric">
+          <span>Output Token</span>
+          <strong id="outputTokens">0</strong>
+        </article>
+        <article class="metric cache">
+          <span>Cached Token</span>
+          <strong id="cachedTokens">0</strong>
+          <small id="cacheRatio">0% cache</small>
+        </article>
+        <article class="metric warning">
+          <span>Hatalı</span>
+          <strong id="failedRequests">0</strong>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Model Bazlı Kullanım</h2>
+          </div>
+          <div id="modelBars" class="bars"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Provider Bazlı Kullanım</h2>
+          </div>
+          <div id="providerBars" class="bars"></div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Günlük Kullanım</h2>
+          </div>
+          <div id="dayBars" class="bars"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Kaynak / Hesap</h2>
+          </div>
+          <div id="sourceBars" class="bars"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Son İstekler</h2>
+          <button id="clearUsage" class="danger">Lokal Veriyi Temizle</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Zaman</th>
+                <th>Provider</th>
+                <th>Model</th>
+                <th>Total</th>
+                <th>Input</th>
+                <th>Output</th>
+                <th>Reasoning</th>
+                <th>Cached</th>
+                <th>Cache %</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="recentRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>API Key Usage</h2>
+            <button id="loadApiKeyUsage">Yükle</button>
+          </div>
+          <pre id="apiKeyUsage" class="pre">Henüz yüklenmedi.</pre>
+        </article>
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Loglar</h2>
+            <button id="loadLogs">Yükle</button>
+          </div>
+          <pre id="logs" class="pre">Henüz yüklenmedi.</pre>
+        </article>
+      </section>
+    </main>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

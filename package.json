@@ -1,0 +1,14 @@
+{
+  "name": "cliproxyapi-usage-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local CLIProxyAPI usage monitor",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron --no-sandbox .",
+    "check": "node --check src/main.js && node --check src/preload.js && node --check src/renderer.js"
+  },
+  "devDependencies": {
+    "electron": "^42.2.0"
+  }
+}
