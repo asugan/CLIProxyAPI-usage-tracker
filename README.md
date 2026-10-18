@@ -70,3 +70,7 @@ src/renderer.js  Dashboard rendering and UI actions
 src/index.html   Application shell
 src/styles.css   Dashboard styles
 ```
+
+## GNOME Top Panel Extension
+
+For a native Ubuntu 24.04 / GNOME 46 quota indicator, see [gnome-extension/README.md](gnome-extension/README.md). It independently reads Claude/Codex OAuth quotas through CLIProxyAPI v8, stores its management key in GNOME Keyring, and does not consume the usage queue.

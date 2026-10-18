@@ -1,0 +1,15 @@
+.cpa-heading { font-weight: bold; font-size: 1.1em; }
+.cpa-scroll { width: 340px; max-height: 520px; }
+.cpa-content { spacing: 12px; padding-right: 12px; }
+.cpa-card { spacing: 7px; padding: 12px; border-radius: 10px; background-color: rgba(128, 128, 128, 0.12); }
+.cpa-provider { font-weight: bold; }
+.cpa-account { font-size: 0.9em; }
+.cpa-muted { color: #aaaaaa; font-size: 0.85em; }
+.cpa-error { color: #ffb4a9; font-size: 0.85em; }
+.cpa-quota { font-weight: bold; padding-top: 5px; }
+.cpa-track { width: 280px; height: 6px; border-radius: 3px; background-color: rgba(128, 128, 128, 0.3); }
+.cpa-fill { height: 6px; border-radius: 3px; }
+.cpa-good { background-color: #78cba4; }
+.cpa-low { background-color: #f2cc70; }
+.cpa-critical { background-color: #f28b82; }
+.cpa-stale { background-color: #888888; }

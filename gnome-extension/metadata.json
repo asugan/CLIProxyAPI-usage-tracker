@@ -1,0 +1,8 @@
+{
+  "uuid": "cliproxy-quota@asugan",
+  "name": "CLIProxy Quota",
+  "description": "Claude ve Codex OAuth kotalarını CLIProxyAPI üzerinden üst panelde gösterir.",
+  "shell-version": ["46"],
+  "settings-schema": "org.gnome.shell.extensions.cliproxy-quota",
+  "version": 1
+}

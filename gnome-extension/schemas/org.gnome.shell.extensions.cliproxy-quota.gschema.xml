@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.cliproxy-quota" path="/org/gnome/shell/extensions/cliproxy-quota/">
+    <key name="base-url" type="s">
+      <default>'http://127.0.0.1:8317'</default>
+      <summary>CLIProxyAPI server root URL</summary>
+    </key>
+    <key name="refresh-minutes" type="i">
+      <range min="5" max="60"/>
+      <default>20</default>
+      <summary>Automatic quota refresh interval in minutes</summary>
+    </key>
+    <key name="key-revision" type="i">
+      <default>0</default>
+      <summary>Signals a Keyring update without storing a secret in GSettings</summary>
+    </key>
+  </schema>
+</schemalist>
